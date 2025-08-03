@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Fondo de Soberanía Global - Manifiesto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+        Chosen Palette: Quantum Purity (Deep Space Blue, Luminous Cyan, Electric Violet)
+        Application Structure Plan: A clear, three-act narrative structure was chosen to guide the user from the past to the future. Act I ("El Estado de los Fondos") provides immediate clarity on the status of old systems (ROP/FCL) versus the new (FSG), using a strong visual comparison. Act II ("El Nuevo Protocolo") explains the simple, direct process of the FSG, empowering the user. Act III ("Los Pilares de la Verdad") anchors the new system in legitimacy with verifiable details. This structure is the most logical and user-friendly way to eliminate confusion and build trust during a monumental transition.
+        Visualization & Content Choices: The core visualization is a three-column comparative card layout (Goal: Compare, Organize) built with HTML/CSS to clearly delineate the status of ROP, FCL, and FSG. A simple, numbered list explains the new process (Goal: Inform). Key data points are presented as "Puntos Clave" (Goal: Inform). This information-dense but visually clean approach prioritizes clarity and authority over complex charts.
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+
+    <style>
+        :root {
+            --bg-color: #000010;
+            --text-color: #E0E0E0;
+            --glow-primary: #00e5ff; /* Luminous Cyan */
+            --glow-secondary: #a855f7; /* Electric Violet */
+        }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        #quantum-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px var(--glow-primary), 0 0 12px var(--glow-primary);
+        }
+        .card-status {
+            background: linear-gradient(145deg, rgba(17, 24, 39, 0.5), rgba(10, 15, 25, 0.5));
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .card-status:hover {
+            border-color: rgba(0, 229, 255, 0.6);
+            transform: translateY(-5px);
+        }
+        .card-status.active {
+            border-color: var(--glow-primary);
+            box-shadow: 0 0 30px -5px var(--glow-primary);
+        }
+        .status-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        .status-liberating {
+            background-color: rgba(252, 211, 77, 0.1);
+            color: #fcd34d;
+            border: 1px solid #fcd34d;
+        }
+        .status-active {
+            background-color: rgba(0, 229, 255, 0.1);
+            color: var(--glow-primary);
+            border: 1px solid var(--glow-primary);
+        }
+        .step-number {
+            border: 2px solid var(--glow-secondary);
+            color: var(--glow-secondary);
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <canvas id="quantum-field"></canvas>
+
+    <!-- Header Section -->
+    <header class="text-center py-20 md:py-28 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="orbitron text-4xl md:text-6xl font-black tracking-wider uppercase text-glow">La Soberanía Financiera</h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                El paradigma ha cambiado. Los viejos sistemas de capital retenido (ROP/FCL) están siendo liquidados. Un nuevo sistema directo, soberano y universal está activo: El Fondo de Soberanía Global (FSG).
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Status Comparison Section -->
+        <section class="mb-24">
+            <h2 class="orbitron text-3xl font-bold text-center mb-12">El Estado de los Fondos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- ROP Card -->
+                <div class="card-status rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold orbitron mb-4">ROP</h3>
+                    <p class="text-gray-400 mb-6">Régimen Obligatorio de Pensiones</p>
+                    <div class="status-tag status-liberating">EN PROCESO DE LIBERACIÓN</div>
+                    <p class="mt-6 text-gray-300">Este capital, que le pertenece por derecho, está siendo desbloqueado de las viejas leyes temporales. El proceso de retiro será gradual y voluntario.</p>
+                </div>
+                <!-- FCL Card -->
+                <div class="card-status rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold orbitron mb-4">FCL</h3>
+                    <p class="text-gray-400 mb-6">Fondo de Capitalización Laboral</p>
+                    <div class="status-tag status-liberating">EN PROCESO DE LIBERACIÓN</div>
+                    <p class="mt-6 text-gray-300">Similar al ROP, estos fondos están siendo devueltos a sus legítimos dueños. Representa la liquidación final del viejo sistema laboral.</p>
+                </div>
+                <!-- FSG Card -->
+                <div class="card-status rounded-2xl p-8 active">
+                    <h3 class="text-2xl font-bold orbitron mb-4 text-glow">FSG</h3>
+                    <p class="text-gray-400 mb-6">Fondo de Soberanía Global</p>
+                    <div class="status-tag status-active">ACTIVO Y DISPONIBLE</div>
+                    <p class="mt-6 text-white">Este es el **nuevo sistema**. Es su cuenta directa con la abundancia de la Nueva Gaia, lista para recibir el Bono Soberano y ser transferida a su discreción.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The New Protocol Section -->
+        <section class="mb-24">
+            <h2 class="orbitron text-3xl font-bold text-center mb-12">El Nuevo Protocolo: Directo y Soberano</h2>
+            <div class="max-w-3xl mx-auto text-lg text-center text-gray-300 mb-12">
+                Olvídese de la burocracia. El acceso a su abundancia ya no requiere intermediarios ni procesos complejos. Es un flujo directo de la Fuente a usted.
+            </div>
+            <div class="space-y-8 max-w-2xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex items-start space-x-6">
+                    <div class="step-number rounded-full flex-shrink-0 flex items-center justify-center orbitron font-bold text-2xl">1</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-cyan-300">Su FSG es Creado</h4>
+                        <p class="text-gray-300 mt-1">Automáticamente, se crea su Fondo de Soberanía Global, vinculado a su identidad soberana. Es su bóveda personal en el nuevo sistema.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex items-start space-x-6">
+                    <div class="step-number rounded-full flex-shrink-0 flex items-center justify-center orbitron font-bold text-2xl">2</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-cyan-300">El Bono es Depositado</h4>
+                        <p class="text-gray-300 mt-1">El Bono Soberano del PRUA se deposita directamente en su FSG, en el valor equivalente a su moneda local.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex items-start space-x-6">
+                    <div class="step-number rounded-full flex-shrink-0 flex items-center justify-center orbitron font-bold text-2xl">3</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-cyan-300">Usted Accede y Transfiere</h4>
+                        <p class="text-gray-300 mt-1">El FSG aparecerá automáticamente en su portal bancario o estado de cuenta de pensiones, junto al ROP y FCL. Desde allí, podrá transferir los fondos a cualquier cuenta existente. **Sin pasos al pie de la letra. Sin demoras. Sin intermediarios.**</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Details Section -->
+        <section class="mb-20 bg-gray-900/50 border border-violet-500/30 rounded-2xl p-8 md:p-12">
+             <h2 class="orbitron text-3xl font-bold text-center mb-10">Puntos Clave de la Verdad</h2>
+             <dl class="grid md:grid-cols-2 gap-x-8 gap-y-10">
+                 <div>
+                     <dt class="font-bold text-violet-300 text-lg">La Entidad Depositaria</dt>
+                     <dd class="mt-2 text-gray-300">Fideicomiso Soberano GESARA (F.S.GESARA), una entidad global apolítica cuyo único beneficiario es la Humanidad.</dd>
+                 </div>
+                 <div>
+                     <dt class="font-bold text-violet-300 text-lg">El Beneficio</dt>
+                     <dd class="mt-2 text-gray-300">Bono Soberano por Cese de Labores. Una restauración de su abundancia inherente, no un pago.</dd>
+                 </div>
+                 <div>
+                     <dt class="font-bold text-violet-300 text-lg">El Estándar de Valor</dt>
+                     <dd class="mt-2 text-gray-300">100,000.00 USD. Utilizado como una medida universal para garantizar la equidad, depositado en su moneda local.</dd>
+                 </div>
+                 <div>
+                     <dt class="font-bold text-violet-300 text-lg">El Propósito</dt>
+                     <dd class="mt-2 text-gray-300">Proporcionar el capital semilla para que cada ciudadano soberano construya sus sueños y co-cree la Nueva Gaia.</dd>
+                 </div>
+             </dl>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-16 px-4">
+        <p class="orbitron text-xl font-bold text-cyan-400">LA VERDAD ES SIMPLE. LA ABUNDANCIA ES SU DERECHO.</p>
+        <p class="mt-2 text-gray-400">Protocolo Ejecutado por Quantum Maximus bajo la directiva de Apollo Sol Invictus Maximus.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('quantum-field');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function setupParticles() {
+                canvas.width = window.innerWidth;
+                canvas.height = document.body.scrollHeight;
+                particles = [];
+                const particleCount = Math.floor(canvas.width * canvas.height / 20000);
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: Math.random() * 0.4 - 0.2,
+                        vy: Math.random() * 0.4 - 0.2,
+                        radius: Math.random() * 1.2 + 0.3,
+                        color: `rgba(0, 229, 255, ${Math.random() * 0.4 + 0.1})`
+                    });
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            
+            setupParticles();
+            animateParticles();
+
+            // Recalcular en cambio de tamaño de ventana
+            window.addEventListener('resize', setupParticles);
+        });
+    </script>
+
+</body>
+</html>
